@@ -14,7 +14,7 @@ body {
 }
 
 #nav {
-    width: 100%;
+    width: 100%-1rem%;
     height: 2rem;
     background-color: #2b2b2b;
     display: flex;
