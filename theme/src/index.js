@@ -66,7 +66,7 @@ export default Blockly.Theme.defineTheme('modern', {
         },
     },
     'categoryStyles': {
-        'scripts_category': {
+        'events_category': {
             'colour': '#ffffff',
         },
         'statements_category': {

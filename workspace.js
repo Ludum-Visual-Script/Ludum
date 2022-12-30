@@ -19,18 +19,92 @@ Theme.setComponentStyle('flyoutBackgroundColour', '#2b2b2b');
 // and fg to white
 Theme.setComponentStyle('toolboxForegroundColour', '#fff');
 
+// Custom blocks
+Blockly.Blocks['event_server_startup'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("on server startup");
+        this.appendStatementInput("CODE")
+            .setCheck(null)
+            .appendField("do");
+        this.setTooltip("A normal server script anything in here will get ran on server startup!");
+        this.setHelpUrl("https://create.roblox.com/docs/reference/engine/classes/Script");
+    }
+};
+
+//Blockly.Lua['event_server_startup'] = function(block) {
+//    var statements_code = Blockly.Lua.statementToCode(block, 'CODE');
+//    var code = '...\n';
+//    return code;
+//};
+
+Blockly.Blocks['event_player_join'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("on player joined")
+            .appendField(new Blockly.FieldVariable("Player"), "PLAYER");
+        this.appendStatementInput("CODE")
+            .setCheck(null)
+            .appendField("do");
+        this.setTooltip("A normal server script anything in here will get ran on server startup!");
+        this.setHelpUrl("https://create.roblox.com/docs/reference/engine/classes/Script");
+    }
+};
+
+Blockly.Blocks['event_player_leave'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("on player left")
+            .appendField(new Blockly.FieldVariable("Player"), "PLAYER");
+        this.appendStatementInput("CODE")
+            .setCheck(null)
+            .appendField("do");
+        this.setTooltip("A normal server script anything in here will get ran on server startup!");
+        this.setHelpUrl("https://create.roblox.com/docs/reference/engine/classes/Script");
+    }
+};
+
+Blockly.Blocks['event_character_added'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("on character added")
+            .appendField(new Blockly.FieldVariable("Character"), "Character");
+        this.appendStatementInput("CODE")
+            .setCheck(null)
+            .appendField("do");
+        this.setTooltip("A normal server script anything in here will get ran on server startup!");
+        this.setHelpUrl("https://create.roblox.com/docs/reference/engine/classes/Script");
+    }
+};
+
 console.log(Theme)
 const toolbox = {
     "kind": "categoryToolbox",
     "contents": [{
             "kind": "category",
             "contents": [{
-                "kind": "BLOCK",
+                    "kind": "BLOCK",
 
-                "type": "controls_if"
-            }],
-            "name": "Scripts",
-            "categorystyle": "scripts_category"
+                    "type": "event_server_startup"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "event_player_join"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "event_player_leave"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "event_character_added"
+                }
+            ],
+            "name": "Events",
+            "categorystyle": "events_category"
         },
         {
             "kind": "category",
