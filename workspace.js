@@ -34,8 +34,7 @@ Blockly.Blocks['event_server_startup'] = {
 
 //Blockly.Lua['event_server_startup'] = function(block) {
 //    var statements_code = Blockly.Lua.statementToCode(block, 'CODE');
-//    var code = '...\n';
-//    return code;
+//    return "print(\"Hello World\")\n";
 //};
 
 Blockly.Blocks['event_player_join'] = {
