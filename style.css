@@ -11,11 +11,11 @@ body {
 
 #workspace {
     width: 100%;
-    height: calc(100% - 1rem);
+    height: calc(100% - 1rem - 2em);
 }
 
 #nav {
-    width: 98.8%;
+    width: calc(100% - 1rem);
     height: 1rem;
     background-color: #2b2b2b;
     display: flex;
