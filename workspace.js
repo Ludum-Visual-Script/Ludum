@@ -25,6 +25,16 @@ const toolbox = {
     "contents": [{
             "kind": "category",
             "contents": [{
+                "kind": "BLOCK",
+
+                "type": "controls_if"
+            }],
+            "name": "Scripts",
+            "categorystyle": "scripts_category"
+        },
+        {
+            "kind": "category",
+            "contents": [{
                     "kind": "BLOCK",
 
                     "type": "controls_if"
