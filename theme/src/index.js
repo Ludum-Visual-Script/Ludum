@@ -19,44 +19,44 @@ export default Blockly.Theme.defineTheme('modern', {
             'colourTertiary': '#845d49',
         },
         'list_blocks': {
-            'colourPrimary': '#745ba5',
-            'colourSecondary': '#c7bddb',
-            'colourTertiary': '#5d4984',
+            'colourPrimary': '#7569f0',
+            'colourSecondary': '#aba3ff',
+            'colourTertiary': '#292366',
         },
         'logic_blocks': {
-            'colourPrimary': '#5b80a5',
-            'colourSecondary': '#bdccdb',
-            'colourTertiary': '#496684',
+            'colourPrimary': '#ffc21c',
+            'colourSecondary': '#ffdb78',
+            'colourTertiary': '#967d38',
         },
         'loop_blocks': {
-            'colourPrimary': '#5ba55b',
-            'colourSecondary': '#bddbbd',
-            'colourTertiary': '#498449',
+            'colourPrimary': '#ffc21c',
+            'colourSecondary': '#ffdb78',
+            'colourTertiary': '#967d38',
         },
         'math_blocks': {
-            'colourPrimary': '#5b67a5',
-            'colourSecondary': '#bdc2db',
-            'colourTertiary': '#495284',
+            'colourPrimary': '#76e05c',
+            'colourSecondary': '#b5ffa3',
+            'colourTertiary': '#347325',
         },
         'procedure_blocks': {
-            'colourPrimary': '#995ba5',
-            'colourSecondary': '#d6bddb',
-            'colourTertiary': '#7a4984',
+            'colourPrimary': '#e01b1b',
+            'colourSecondary': '#ff8282',
+            'colourTertiary': '#5c0c0c',
         },
         'text_blocks': {
-            'colourPrimary': '#5ba58c',
-            'colourSecondary': '#bddbd1',
-            'colourTertiary': '#498470',
+            'colourPrimary': '#27c4b4',
+            'colourSecondary': '#69fff0',
+            'colourTertiary': '#147067',
         },
         'variable_blocks': {
-            'colourPrimary': '#a55b99',
-            'colourSecondary': '#dbbdd6',
-            'colourTertiary': '#84497a',
+            'colourPrimary': '#cc45ca',
+            'colourSecondary': '#f797f6',
+            'colourTertiary': '#691e68',
         },
         'variable_dynamic_blocks': {
-            'colourPrimary': '#a55b99',
-            'colourSecondary': '#dbbdd6',
-            'colourTertiary': '#84497a',
+            'colourPrimary': '#cc45ca',
+            'colourSecondary': '#f797f6',
+            'colourTertiary': '#691e68',
         },
         'hat_blocks': {
             'colourPrimary': '#a55b99',
@@ -66,6 +66,9 @@ export default Blockly.Theme.defineTheme('modern', {
         },
     },
     'categoryStyles': {
+        'scripts_category': {
+            'colour': '#ffffff',
+        },
         'statements_category': {
             'colour': '#ffc21c',
         },
@@ -73,7 +76,7 @@ export default Blockly.Theme.defineTheme('modern', {
             'colour': '#76e05c',
         },
         'strings_category': {
-            'colour': '#68ded2',
+            'colour': '#27c4b4',
         },
         'tables_category': {
             'colour': '#7569f0',
