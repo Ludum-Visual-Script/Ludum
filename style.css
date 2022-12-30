@@ -25,7 +25,6 @@ body {
     padding-bottom: 1em;
     padding-left: 1rem;
 }
-}
 
 #input {
     width: 100%;
@@ -49,11 +48,6 @@ left: 0;
 
 .bold {
     font-weight: bold;
-}
-
-#generate:hover, #generate:active {
-    background-color: #00aaff;
-    box-shadow: #00aaff 0px 0px 20px;
 }
 
 #output {
