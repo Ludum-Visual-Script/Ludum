@@ -1,12 +1,12 @@
 import * as Blockly from 'blockly/core';
 import 'blockly/blocks'
-import {luaGenerator} from 'blockly/lua';
+import { luaGenerator } from 'blockly/lua';
 import * as En from 'blockly/msg/en'
 
 Blockly.setLocale(En);
-import Theme from '@blockly/theme-modern';
+import Theme from './theme/src/index.js';
 
-import {ContinuousToolbox, ContinuousFlyout, ContinuousMetrics} from '@blockly/continuous-toolbox';
+import { ContinuousToolbox, ContinuousFlyout, ContinuousMetrics } from '@blockly/continuous-toolbox';
 
 // set the editor background to dark theme
 Theme.setComponentStyle('workspaceBackgroundColour', '#1e1e1e');
@@ -18,6 +18,7 @@ Theme.setComponentStyle('toolboxForegroundColour', '#fff');
 Theme.setComponentStyle('flyoutBackgroundColour', '#2b2b2b');
 // and fg to white
 Theme.setComponentStyle('toolboxForegroundColour', '#fff');
+
 console.log(Theme)
 const toolbox = {
     "kind": "categoryToolbox",
@@ -60,7 +61,7 @@ const toolbox = {
                 }
             ],
             "name": "Statements",
-            "categorystyle": "logic_category"
+            "categorystyle": "statements_category"
         },
         {
             "kind": "category",
@@ -152,7 +153,7 @@ const toolbox = {
                 }
             ],
             "name": "Operators",
-            "categorystyle": "math_category"
+            "categorystyle": "operators_category"
         },
         {
             "kind": "category",
@@ -237,8 +238,8 @@ const toolbox = {
                     "type": "text_prompt_ext"
                 }
             ],
-            "name": "String",
-            "categorystyle": "text_category"
+            "name": "Strings",
+            "categorystyle": "strings_category"
         },
         {
             "kind": "category",
@@ -304,7 +305,7 @@ const toolbox = {
                 }
             ],
             "name": "Tables",
-            "categorystyle": "list_category"
+            "categorystyle": "tables_category"
         },
         {
             "kind": "SEP"
@@ -312,13 +313,13 @@ const toolbox = {
         {
             "kind": "category",
             "name": "Variables",
-            "categorystyle": "variable_category",
+            "categorystyle": "variables_category",
             "custom": "VARIABLE"
         },
         {
             "kind": "category",
             "name": "Functions",
-            "categorystyle": "procedure_category",
+            "categorystyle": "funtions_category",
             "custom": "PROCEDURE"
         },
         {
@@ -347,7 +348,7 @@ function loadExtension(extension) {
 
         toolbox.contents.push(newCategory);
     }
-    toolbox.contents.push({"kind": "SEP"});
+    toolbox.contents.push({ "kind": "SEP" });
     workspace.updateToolbox(toolbox);
     workspace.refreshToolboxSelection();
 }
@@ -380,7 +381,7 @@ const workspace = Blockly.inject('workspace', {
         'flyoutsVerticalToolbox': ContinuousFlyout,
         'metricsManager': ContinuousMetrics,
     }
-},);
+}, );
 const output = document.getElementById("output");
 const outputText = document.getElementById("outputText")
 output.onclick = () => {
