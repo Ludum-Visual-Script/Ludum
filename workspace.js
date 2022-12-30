@@ -5,7 +5,7 @@ import * as En from 'blockly/msg/en'
 
 Blockly.setLocale(En);
 import Theme from './theme.js';
-
+import hljs from './packages/highlight.js';
 import { ContinuousToolbox, ContinuousFlyout, ContinuousMetrics } from '@blockly/continuous-toolbox';
 
 // Custom blocks
