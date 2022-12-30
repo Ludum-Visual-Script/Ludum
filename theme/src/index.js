@@ -70,19 +70,19 @@ export default Blockly.Theme.defineTheme('modern', {
             'colour': '#ffc21c',
         },
         'operators_category': {
-            'colour': '#ffc21c',
+            'colour': '#76e05c',
         },
         'strings_category': {
-            'colour': '#ffc21c',
+            'colour': '#68ded2',
         },
         'tables_category': {
-            'colour': '#ffc21c',
+            'colour': '#7569f0',
         },
         'variables_category': {
-            'colour': '#ffc21c',
+            'colour': '#cc45ca',
         },
         'funtions_category': {
-            'colour': '#ffc21c',
+            'colour': '#e01b1b',
         },
     },
     'componentStyles': {},
