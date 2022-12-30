@@ -21,53 +21,13 @@ Theme.setComponentStyle('toolboxForegroundColour', '#fff');
 console.log(Theme)
 const toolbox = {
     "kind": "categoryToolbox",
-    "contents": [
-        {
+    "contents": [{
             "kind": "category",
-            "contents": [
-                {
+            "contents": [{
                     "kind": "BLOCK",
 
                     "type": "controls_if"
                 },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "logic_compare"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "logic_operation"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "logic_negate"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "logic_boolean"
-                },
-                {
-                    "kind": "block",
-
-                    "type": "logic_null",
-                    "disabled": "true"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "logic_ternary"
-                }
-            ],
-            "name": "Logic",
-            "categorystyle": "logic_category"
-        },
-        {
-            "kind": "category",
-            "contents": [
                 {
                     "kind": "BLOCK",
 
@@ -77,7 +37,6 @@ const toolbox = {
                     "kind": "BLOCK",
 
                     "type": "controls_repeat",
-                    "disabled": "true"
                 },
                 {
                     "kind": "BLOCK",
@@ -100,13 +59,12 @@ const toolbox = {
                     "type": "controls_flow_statements"
                 }
             ],
-            "name": "Loops",
-            "categorystyle": "loop_category"
+            "name": "Statements",
+            "categorystyle": "logic_category"
         },
         {
             "kind": "category",
-            "contents": [
-                {
+            "contents": [{
                     "kind": "BLOCK",
 
                     "type": "math_number",
@@ -116,6 +74,26 @@ const toolbox = {
                     "kind": "BLOCK",
 
                     "type": "math_arithmetic"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "logic_compare"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "logic_operation"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "logic_negate"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "logic_boolean"
                 },
                 {
                     "kind": "BLOCK",
@@ -173,13 +151,12 @@ const toolbox = {
                     "type": "math_atan2"
                 }
             ],
-            "name": "Math",
+            "name": "Operators",
             "categorystyle": "math_category"
         },
         {
             "kind": "category",
-            "contents": [
-                {
+            "contents": [{
                     "kind": "BLOCK",
 
                     "type": "text"
@@ -222,11 +199,6 @@ const toolbox = {
                 {
                     "kind": "BLOCK",
 
-                    "type": "text_getSubstring"
-                },
-                {
-                    "kind": "BLOCK",
-
                     "type": "text_changeCase"
                 },
                 {
@@ -265,13 +237,12 @@ const toolbox = {
                     "type": "text_prompt_ext"
                 }
             ],
-            "name": "Text",
+            "name": "String",
             "categorystyle": "text_category"
         },
         {
             "kind": "category",
-            "contents": [
-                {
+            "contents": [{
                     "kind": "BLOCK",
 
                     "type": "lists_create_with"
@@ -332,7 +303,7 @@ const toolbox = {
                     "type": "lists_reverse"
                 }
             ],
-            "name": "Lists",
+            "name": "Tables",
             "categorystyle": "list_category"
         },
         {
