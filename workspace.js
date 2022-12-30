@@ -4,7 +4,7 @@ import { luaGenerator } from 'blockly/lua';
 import * as En from 'blockly/msg/en'
 
 Blockly.setLocale(En);
-import Theme from './theme/src/index.js';
+import Theme from './theme/dist/index.js';
 
 import { ContinuousToolbox, ContinuousFlyout, ContinuousMetrics } from '@blockly/continuous-toolbox';
 
