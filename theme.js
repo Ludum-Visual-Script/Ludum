@@ -1,16 +1,6 @@
-/**
- * @license
- * Copyright 2020 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-
-/**
- * @fileoverview Modern theme.
- */
-
 import Blockly from 'blockly/core';
 
-export default Blockly.Theme.defineTheme('modern', {
+export default Blockly.Theme.defineTheme('ludum', {
     'base': Blockly.Themes.Classic,
     'blockStyles': {
         'colour_blocks': {
@@ -88,7 +78,13 @@ export default Blockly.Theme.defineTheme('modern', {
             'colour': '#e01b1b',
         },
     },
-    'componentStyles': {},
+    'componentStyles': {
+        'workspaceBackgroundColour': '#1e1e1e',
+        'toolboxBackgroundColour': '#1e1e1e',
+        'toolboxForegroundColour': '#ffffff',
+        'flyoutBackgroundColour': '#2b2b2b',
+        'flyoutForegroundColour': '#ffffff',
+    },
     'fontStyle': {},
     'startHats': null,
 });

@@ -8,17 +8,6 @@ import Theme from './theme.js';
 
 import { ContinuousToolbox, ContinuousFlyout, ContinuousMetrics } from '@blockly/continuous-toolbox';
 
-// set the editor background to dark theme
-Theme.setComponentStyle('workspaceBackgroundColour', '#1e1e1e');
-// also set toolbox bg to dark theme
-Theme.setComponentStyle('toolboxBackgroundColour', '#1e1e1e');
-// and fg to white
-Theme.setComponentStyle('toolboxForegroundColour', '#fff');
-// flyout bg to a little bit lighter but still dark theme
-Theme.setComponentStyle('flyoutBackgroundColour', '#2b2b2b');
-// and fg to white
-Theme.setComponentStyle('toolboxForegroundColour', '#fff');
-
 // Custom blocks
 Blockly.Blocks['event_server_startup'] = {
     init: function() {
