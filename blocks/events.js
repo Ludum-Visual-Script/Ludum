@@ -36,7 +36,7 @@ Blockly.Blocks['event_player_join'] = {
 };
 
 window.Generator['event_player_join'] = function(block) {
-    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
+    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Names.NameType.VARIABLE);
     var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
     var code = 'game.Players.PlayerAdded:Connect(function(' + variable_player + ')\n' + statements_statement + 'end)\n';
     return code
@@ -57,7 +57,7 @@ Blockly.Blocks['event_player_left'] = {
 };
 
 window.Generator['event_player_left'] = function(block) {
-    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
+    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Names.NameType.VARIABLE);
     var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
     var code = 'game.Players.PlayerRemoving:Connect(function(' + variable_player + ')\n' + statements_statement + 'end)\n';
     return code
@@ -82,8 +82,8 @@ Blockly.Blocks['event_character_added'] = {
 };
 
 window.Generator['event_character_added'] = function(block) {
-    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
-    var variable_character = window.Generator.nameDB_.getName(block.getFieldValue('CHARACTER'), Blockly.Variables.NAME_TYPE);
+    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Names.NameType.VARIABLE);
+    var variable_character = window.Generator.nameDB_.getName(block.getFieldValue('CHARACTER'), Blockly.Names.NameType.VARIABLE);
     var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
     var code = variable_player + '.CharacterAdded:Connect(function(' + variable_character + ')\n' + statements_statement + 'end)\n';
     return code
@@ -108,8 +108,8 @@ Blockly.Blocks['event_character_removing'] = {
 };
 
 window.Generator['event_character_removing'] = function(block) {
-    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
-    var variable_character = window.Generator.nameDB_.getName(block.getFieldValue('CHARACTER'), Blockly.Variables.NAME_TYPE);
+    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Names.NameType.VARIABLE);
+    var variable_character = window.Generator.nameDB_.getName(block.getFieldValue('CHARACTER'), Blockly.Names.NameType.VARIABLE);
     var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
     var code = variable_player + '.CharacterRemoving:Connect(function(' + variable_character + ')\n' + statements_statement + 'end)\n';
     return code
