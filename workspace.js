@@ -392,7 +392,7 @@ document.getElementById("extensions").onclick = () => {
         reader.onload = readerEvent => {
             var content = readerEvent.target.result;
             console.log(content);
-            //loadExtension(content);
+            loadExtension(eval(content));
         }
 
     }
