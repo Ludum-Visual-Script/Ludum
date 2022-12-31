@@ -5,6 +5,7 @@ window.Generator = luaGenerator;
 
 Blockly.Blocks['event_server_startup'] = {
     init: function() {
+        this.setColour("#7500FF");
         this.appendDummyInput()
             .appendField("On server startup");
         this.setNextStatement(true, null);
@@ -20,6 +21,7 @@ window.Generator['event_server_startup'] = function(block) {
 
 Blockly.Blocks['event_player_join'] = {
     init: function() {
+        this.setColour("#7500FF");
         this.appendDummyInput()
             .appendField("On player joined")
             .appendField(new Blockly.FieldVariable("player"), "PLAYER");
@@ -42,6 +44,7 @@ window.Generator['event_player_join'] = function(block) {
 
 Blockly.Blocks['event_player_left'] = {
     init: function() {
+        this.setColour("#7500FF");
         this.appendDummyInput()
             .appendField("On player left")
             .appendField(new Blockly.FieldVariable("Player"), "PLAYER");
@@ -62,6 +65,7 @@ window.Generator['event_player_left'] = function(block) {
 
 Blockly.Blocks['event_character_added'] = {
     init: function() {
+        this.setColour("#7500FF");
         this.appendDummyInput()
             .appendField(new Blockly.FieldVariable("Player"), "PLAYER")
             .appendField("character")
@@ -87,6 +91,7 @@ window.Generator['event_character_added'] = function(block) {
 
 Blockly.Blocks['event_character_removing'] = {
     init: function() {
+        this.setColour("#7500FF");
         this.appendDummyInput()
             .appendField(new Blockly.FieldVariable("Player"), "PLAYER")
             .appendField("character")

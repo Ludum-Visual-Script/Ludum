@@ -57,7 +57,7 @@ export default Blockly.Theme.defineTheme('ludum', {
     },
     'categoryStyles': {
         'events_category': {
-            'colour': '#ffffff',
+            'colour': '#7500FF',
         },
         'statements_category': {
             'colour': '#ffc21c',
