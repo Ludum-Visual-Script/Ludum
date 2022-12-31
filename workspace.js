@@ -354,10 +354,14 @@ const toolbox = {
 function loadExtension(extension) {
     for (let i = 0; i < extension.categories.length; i++) {
         let category = extension.categories[i];
+
+        //Theme.categoryStyles[category.name] = category.category_style
+
         let newCategory = {
             "kind": "category",
             "name": category.name,
             "contents": [],
+            "colour": category.category_style,
         }
         for (let i = 0; i < category.blocks.length; i++) {
             let block = category.blocks[i];
@@ -374,6 +378,8 @@ function loadExtension(extension) {
     toolbox.contents.push({ "kind": "SEP" });
     workspace.updateToolbox(toolbox);
     workspace.refreshToolboxSelection();
+    //workspace.refreshTheme();
+    console.log("Sucessfully loaded extension");
 }
 
 
@@ -391,7 +397,6 @@ document.getElementById("extensions").onclick = () => {
 
         reader.onload = readerEvent => {
             var content = readerEvent.target.result;
-            console.log(content);
             loadExtension(eval(content));
         }
 

@@ -77,6 +77,9 @@ export default Blockly.Theme.defineTheme('ludum', {
         'funtions_category': {
             'colour': '#e01b1b',
         },
+        'extensions_category': {
+            'colour': '#e01b1b',
+        },
     },
     'componentStyles': {
         'workspaceBackgroundColour': '#1e1e1e',
