@@ -1,6 +1,6 @@
 import * as Blockly from 'blockly/core';
 import 'blockly/blocks'
-import { luaGenerator } from 'blockly/lua';
+import {luaGenerator} from 'blockly/lua';
 import * as En from 'blockly/msg/en'
 
 // Declare custom blocks
@@ -9,49 +9,49 @@ import './blocks/events.js';
 Blockly.setLocale(En);
 import Theme from './theme.js';
 import hljs from './packages/highlight.js';
-import { ContinuousToolbox, ContinuousFlyout, ContinuousMetrics } from '@blockly/continuous-toolbox';
+import {ContinuousToolbox, ContinuousFlyout, ContinuousMetrics} from '@blockly/continuous-toolbox';
 
 console.log(Theme)
 const toolbox = {
     "kind": "categoryToolbox",
     "contents": [{
-            "kind": "category",
-            "contents": [{
-                    "kind": "BLOCK",
+        "kind": "category",
+        "contents": [{
+            "kind": "BLOCK",
 
-                    "type": "event_server_startup"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "event_player_join"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "event_player_left"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "event_character_added"
-                },
-                {
-                    "kind": "BLOCK",
-
-                    "type": "event_character_removing"
-                }
-            ],
-            "name": "Events",
-            "categorystyle": "events_category"
+            "type": "event_server_startup"
         },
+            {
+                "kind": "BLOCK",
+
+                "type": "event_player_join"
+            },
+            {
+                "kind": "BLOCK",
+
+                "type": "event_player_left"
+            },
+            {
+                "kind": "BLOCK",
+
+                "type": "event_character_added"
+            },
+            {
+                "kind": "BLOCK",
+
+                "type": "event_character_removing"
+            }
+        ],
+        "name": "Events",
+        "categorystyle": "events_category"
+    },
         {
             "kind": "category",
             "contents": [{
-                    "kind": "BLOCK",
+                "kind": "BLOCK",
 
-                    "type": "controls_if"
-                },
+                "type": "controls_if"
+            },
                 {
                     "kind": "BLOCK",
 
@@ -89,11 +89,11 @@ const toolbox = {
         {
             "kind": "category",
             "contents": [{
-                    "kind": "BLOCK",
+                "kind": "BLOCK",
 
-                    "type": "math_number",
-                    "gap": "32"
-                },
+                "type": "math_number",
+                "gap": "32"
+            },
                 {
                     "kind": "BLOCK",
 
@@ -181,10 +181,10 @@ const toolbox = {
         {
             "kind": "category",
             "contents": [{
-                    "kind": "BLOCK",
+                "kind": "BLOCK",
 
-                    "type": "text"
-                },
+                "type": "text"
+            },
                 {
                     "kind": "BLOCK",
 
@@ -267,10 +267,10 @@ const toolbox = {
         {
             "kind": "category",
             "contents": [{
-                    "kind": "BLOCK",
+                "kind": "BLOCK",
 
-                    "type": "lists_create_with"
-                },
+                "type": "lists_create_with"
+            },
                 {
                     "kind": "BLOCK",
 
@@ -375,7 +375,7 @@ function loadExtension(extension) {
 
         toolbox.contents.push(newCategory);
     }
-    toolbox.contents.push({ "kind": "SEP" });
+    toolbox.contents.push({"kind": "SEP"});
     workspace.updateToolbox(toolbox);
     workspace.refreshToolboxSelection();
     //workspace.refreshTheme();
@@ -429,7 +429,7 @@ const workspace = Blockly.inject('workspace', {
         'flyoutsVerticalToolbox': ContinuousFlyout,
         'metricsManager': ContinuousMetrics,
     }
-}, );
+},);
 const output = document.getElementById("output");
 const outputText = document.getElementById("outputText")
 output.onclick = () => {
