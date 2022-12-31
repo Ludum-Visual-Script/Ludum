@@ -3,7 +3,7 @@
 Write Luau code visually.
 
 ## How to download a release?
-https://api.github.com/Ludum-Visual-Script/Ludum/releases/latest
+https://github.com/Ludum-Visual-Script/Ludum/releases/tag/alpha
 
 ## Building
 
