@@ -382,9 +382,7 @@ function loadExtension(extension) {
     console.log("Sucessfully loaded extension");
 }
 
-
-let inputDiv = document.getElementById("input");
-document.getElementById("extensions").onclick = () => {
+function loadExtensionFromFile() {
     var input = document.createElement('input');
     input.type = 'file';
 
@@ -397,21 +395,128 @@ document.getElementById("extensions").onclick = () => {
 
         reader.onload = readerEvent => {
             var content = readerEvent.target.result;
-            loadExtension(eval(content));
+            loadExtension(eval(`(${content})`));
         }
 
     }
 
     input.click();
-    //inputDiv.style.display = "block";
 }
 
-// document.getElementById("load").onclick = () => {
-//     inputDiv.style.display = "none";
-//     let extension = eval(`(${document.getElementById("inputTextarea").value})`);
-//     console.log(extension);
-//     loadExtension(extension);
-// }
+const extensions = [
+    "https://raw.githubusercontent.com/Ludum-Extensions/Ludum-Utilities/main/extension.js",
+    "https://raw.githubusercontent.com/Ludum-Extensions/Rythian-Classes/main/extension.js",
+    "https://raw.githubusercontent.com/Ludum-Extensions/Datatypes/main/extension.js"
+]
+let loadedExtensions = []
+
+document.getElementById("extensions").onclick = () => {
+    let extensionPicker = document.createElement("div");
+    // Add the class popup
+    extensionPicker.classList.add("popup");
+    // add a div with the class innerPopup
+    let innerPopup = document.createElement("div");
+    innerPopup.classList.add("innerPopup");
+    let title = document.createElement("h3");
+    title.innerText = "Official Extensions"
+    let xButton = document.createElement("button");
+    xButton.innerText = "Cancel";
+    xButton.classList.add("xButton");
+    xButton.classList.add("btn")
+    xButton.onclick = () => {
+        extensionPicker.remove();
+    }
+    innerPopup.appendChild(xButton);
+    innerPopup.appendChild(title);
+    innerPopup.appendChild(document.createElement("hr"));
+    let extensionList = document.createElement("div");
+    if (loadedExtensions.length == 0) {
+        extensionList.innerText = "Loading...";
+        let promises = []
+        for (let i = 0; i < extensions.length; i++) {
+            let extension = extensions[i];
+            promises.push(fetch(extension).then((response) => {
+                return response.text();
+            }));
+        }
+        Promise.all(promises).then((responses) => {
+            extensionList.innerText = "";
+            for (let i = 0; i < responses.length; i++) {
+                let response = responses[i];
+                console.log(`loading extension ${response}`);
+                let extension;
+                try {
+                    extension = eval(`(${response})`)
+                    loadedExtensions.push(extension);
+                    let extensionElement = document.createElement("div");
+                    extensionElement.classList.add("extension");
+                    let extensionName = document.createElement("h4");
+                    extensionName.innerText = extension.name;
+                    extensionElement.appendChild(extensionName);
+                    let extensionDescription = document.createElement("p");
+                    extensionDescription.innerText = extension.description;
+                    extensionElement.appendChild(extensionDescription);
+                    let extensionButton = document.createElement("button");
+                    extensionButton.innerText = "Install";
+                    extensionButton.onclick = () => {
+                        loadExtension(extension);
+                        extensionPicker.remove();
+                    }
+                    extensionElement.appendChild(extensionButton);
+                    extensionList.appendChild(extensionElement);
+                } catch (e) {
+                    console.error(`Failed to load extension: ${e}`);
+                }
+
+            }
+
+
+        });
+
+    } else {
+
+        for (let i = 0; i < loadedExtensions.length; i++) {
+            let extension = loadedExtensions[i];
+            let extensionElement = document.createElement("div");
+            extensionElement.classList.add("extension");
+            let extensionName = document.createElement("h4");
+            extensionName.innerText = extension.name;
+            extensionElement.appendChild(extensionName);
+            let extensionDescription = document.createElement("p");
+            extensionDescription.innerText = extension.description;
+            extensionElement.appendChild(extensionDescription);
+            let extensionButton = document.createElement("button");
+            extensionButton.innerText = "Install";
+            extensionButton.onclick = () => {
+                loadExtension(extension);
+                extensionPicker.remove();
+            }
+            extensionElement.appendChild(extensionButton);
+            extensionList.appendChild(extensionElement);
+
+        }
+    }
+    let extensionElement = document.createElement("div");
+    extensionElement.classList.add("extension");
+    let extensionName = document.createElement("h4");
+    extensionName.innerText = "Upload Extension";
+    extensionElement.appendChild(extensionName);
+    let extensionDescription = document.createElement("p");
+    extensionDescription.innerText = "Upload an extension from your computer (DANGER: This can be used to install malicious extensions)";
+    extensionElement.appendChild(extensionDescription);
+    let extensionButton = document.createElement("button");
+    extensionButton.innerText = "Upload";
+    extensionButton.onclick = () => {
+        loadExtensionFromFile();
+        extensionPicker.remove();
+    }
+    extensionElement.appendChild(extensionButton);
+    extensionList.appendChild(extensionElement);
+    innerPopup.appendChild(extensionList);
+    extensionPicker.appendChild(innerPopup);
+    document.body.appendChild(extensionPicker);
+}
+
 
 const workspace = Blockly.inject('workspace', {
     renderer: "zelos",
