@@ -34,7 +34,7 @@ Blockly.Blocks['event_player_join'] = {
 };
 
 window.Generator['event_player_join'] = function(block) {
-    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
+    // var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
     var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
     var code = 'game.Players.PlayerAdded:Connect(function(player)\n' + statements_statement + 'end)\n';
     return code
