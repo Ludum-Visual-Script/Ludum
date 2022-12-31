@@ -379,14 +379,34 @@ function loadExtension(extension) {
 
 let inputDiv = document.getElementById("input");
 document.getElementById("extensions").onclick = () => {
-    inputDiv.style.display = "block";
+    var input = document.createElement('input');
+    input.type = 'file';
+
+    input.onchange = e => {
+
+        var file = e.target.files[0];
+
+        var reader = new FileReader();
+        reader.readAsText(file, 'UTF-8');
+
+        reader.onload = readerEvent => {
+            var content = readerEvent.target.result;
+            console.log(content);
+            //loadExtension(content);
+        }
+
+    }
+
+    input.click();
+    //inputDiv.style.display = "block";
 }
-document.getElementById("load").onclick = () => {
-    inputDiv.style.display = "none";
-    let extension = eval(`(${document.getElementById("inputTextarea").value})`);
-    console.log(extension);
-    loadExtension(extension);
-}
+
+// document.getElementById("load").onclick = () => {
+//     inputDiv.style.display = "none";
+//     let extension = eval(`(${document.getElementById("inputTextarea").value})`);
+//     console.log(extension);
+//     loadExtension(extension);
+// }
 
 const workspace = Blockly.inject('workspace', {
     renderer: "zelos",
