@@ -6,18 +6,15 @@ window.Generator = luaGenerator;
 Blockly.Blocks['event_server_startup'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("on server startup");
-        this.appendStatementInput("CODE")
-            .setCheck(null)
-            .appendField("do");
-        this.setTooltip("A normal server script anything in here will get ran on server startup!");
-        this.setHelpUrl("https://create.roblox.com/docs/reference/engine/classes/Script");
+            .appendField("On server startup");
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
 };
 
 window.Generator['event_server_startup'] = function(block) {
-    var statements_statement = window.Generator.statementToCode(block, 'CODE');
-    var code = '-- Generated using Ludum Visual Script\n' + statements_statement + '\n';
+    var code = '-- Generated using Ludum Visual Script\n';
     return code
 };
 
