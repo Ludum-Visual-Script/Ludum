@@ -40,10 +40,10 @@ window.Generator['event_player_join'] = function(block) {
     return code
 };
 
-Blockly.Blocks['event_player_leave'] = {
+Blockly.Blocks['event_player_left'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("on player left")
+            .appendField("On player left")
             .appendField(new Blockly.FieldVariable("Player"), "PLAYER");
         this.appendStatementInput("CODE")
             .setCheck(null)
@@ -53,15 +53,57 @@ Blockly.Blocks['event_player_leave'] = {
     }
 };
 
+window.Generator['event_player_left'] = function(block) {
+    // var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
+    var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
+    var code = 'game.Players.PlayerRemoving:Connect(function(player)\n' + statements_statement + 'end)\n';
+    return code
+};
+
 Blockly.Blocks['event_character_added'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("on character added")
-            .appendField(new Blockly.FieldVariable("Character"), "Character");
-        this.appendStatementInput("CODE")
+            .appendField(new Blockly.FieldVariable("Player"), "PLAYER")
+            .appendField("character")
+            .appendField(new Blockly.FieldVariable("Character"), "CHARACTER")
+            .appendField("added");
+        this.appendStatementInput("NAME")
             .setCheck(null)
             .appendField("do");
-        this.setTooltip("A normal server script anything in here will get ran on server startup!");
-        this.setHelpUrl("https://create.roblox.com/docs/reference/engine/classes/Script");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
+};
+
+window.Generator['event_character_added'] = function(block) {
+    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
+    var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
+    var code = variable_player + '.CharacterAdded:Connect(function(character)\n' + statements_statement + 'end)\n';
+    return code
+};
+
+Blockly.Blocks['event_character_removing'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldVariable("Player"), "PLAYER")
+            .appendField("character")
+            .appendField(new Blockly.FieldVariable("Character"), "CHARACTER")
+            .appendField("removing");
+        this.appendStatementInput("NAME")
+            .setCheck(null)
+            .appendField("do");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+window.Generator['event_character_removing'] = function(block) {
+    var variable_player = window.Generator.nameDB_.getName(block.getFieldValue('PLAYER'), Blockly.Variables.NAME_TYPE);
+    var statements_statement = window.Generator.statementToCode(block, 'STATEMENT');
+    var code = variable_player + '.CharacterRemoving:Connect(function(character)\n' + statements_statement + 'end)\n';
+    return code
 };

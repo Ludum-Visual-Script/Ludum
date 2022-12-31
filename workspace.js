@@ -29,12 +29,17 @@ const toolbox = {
                 {
                     "kind": "BLOCK",
 
-                    "type": "event_player_leave"
+                    "type": "event_player_left"
                 },
                 {
                     "kind": "BLOCK",
 
                     "type": "event_character_added"
+                },
+                {
+                    "kind": "BLOCK",
+
+                    "type": "event_character_removing"
                 }
             ],
             "name": "Events",
