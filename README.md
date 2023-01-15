@@ -1,3 +1,6 @@
+# Discord invite
+https://discord.gg/MvGex6uppG
+
 # Ludum
 
 Write Luau code visually.
