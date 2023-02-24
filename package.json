@@ -1,0 +1,13 @@
+{
+  "name": "ludum-editor",
+  "version": "1.0.0",
+  "dependencies": {
+    "@blockly/continuous-toolbox": "^3.0.3",
+    "blockly": "^9.2.0",
+    "esbuild": "0.16.12"
+  },
+  "scripts": {
+    "build": "esbuild workspace.js --bundle --outfile=dist/bundle.js --minify --sourcemap",
+    "watch": "esbuild workspace.js --bundle --outfile=dist/bundle.js --sourcemap --watch"
+  }
+}
